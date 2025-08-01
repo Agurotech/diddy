@@ -1,6 +1,6 @@
 {
     "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "weather-bot",
+    "name": "diddy",
     "main": "src/index.ts",
     "compatibility_date": "2024-09-23",
     "compatibility_flags": [
@@ -8,15 +8,15 @@
     ],
     "kv_namespaces": [
       {
-        "binding": "WEATHER_BOT_TOKENS",
-        "id": "<your-kv-namespace-id>",
-      },
+        "binding": "DIDDY_TOKENS",
+        "id": "d3b97bcf464c49b9b0f3df0a17898480",
+      }
     ],
     "observability": {
       "enabled": true,
     },
     "vars": {
-      "LINEAR_CLIENT_ID": "<your-linear-client-id>",
-      "WORKER_URL": "<your-worker-url>"
+      "LINEAR_CLIENT_ID": "d2caed2095d242803cfec1f9dfaec931",
+      "WORKER_URL": "https://diddy.agurotech.workers.dev"
     }
   }
