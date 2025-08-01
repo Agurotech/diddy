@@ -63,7 +63,7 @@ src/
 
    * Create a KV namespace and set its ID in `wrangler.jsonc` as well
    ```
-   wrangler kv namespace create "WEATHER_BOT_TOKENS"
+   wrangler kv namespace create "DIDDY_TOKENS"
    ```
 
 3. **Deploy**

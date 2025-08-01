@@ -126,22 +126,22 @@ export async function getOAuthToken(
   env: Env,
   workspaceId: string
 ): Promise<string | null> {
-  if (!env.WEATHER_BOT_TOKENS) {
+  if (!env.DIDDY_TOKENS) {
     return null;
   }
 
   if (workspaceId) {
     // Get token for specific workspace
     const key = getWorkspaceTokenKey(workspaceId);
-    return await env.WEATHER_BOT_TOKENS.get(key);
+    return await env.DIDDY_TOKENS.get(key);
   } else {
     // Try to find any stored token (for backward compatibility)
     // List all keys with our prefix and get the first one
-    const keys = await env.WEATHER_BOT_TOKENS.list({
+    const keys = await env.DIDDY_TOKENS.list({
       prefix: OAUTH_TOKEN_KEY_PREFIX,
     });
     if (keys.keys.length > 0) {
-      return await env.WEATHER_BOT_TOKENS.get(keys.keys[0].name);
+      return await env.DIDDY_TOKENS.get(keys.keys[0].name);
     }
     return null;
   }
@@ -160,7 +160,7 @@ export async function setOAuthToken(
   workspaceId: string
 ): Promise<void> {
   const key = getWorkspaceTokenKey(workspaceId);
-  await env.WEATHER_BOT_TOKENS.put(key, token);
+  await env.DIDDY_TOKENS.put(key, token);
 }
 
 /**
